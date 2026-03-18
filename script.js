@@ -1,31 +1,36 @@
 // Dati utente
-let km = prompt('Inserisci il numero di chilometri che vuoi percorrere');
-console.log(km);
+const km = document.getElementById('distance');
+const age = document.getElementById('user');
 
-const age = prompt('Inserisci la tua età');
-console.log(age);
+//Collegamento bottone
+const btn = document.getElementById('send');
+btn.addEventListener('click', getPrice(km, age))
 
-// Calcolo prezzo base
-let price = km * 0.21;
+//Calcolo biglietto
+function getPrice(distance, years) {
 
-// Calcolo biglietto base
-if (age >= 18 && age <= 64) {
+    // Calcolo prezzo base
+    let price = distance * 0.21;
 
-    let priceFixed = price.toFixed(2);
-    console.log(priceFixed + '€');
+    // Calcolo biglietto base
+    if (years >= 18 && years <= 64) {
 
-    // Calcolo biglietto per minori
-} else if (age <= 17 && age >= 0) {
+        let priceFixed = price.toFixed(2);
+        console.log(priceFixed + '€');
 
-    let sales = price - ((price * 20) / 100);
-    let salesFixed = sales.toFixed(2);
-    console.log(salesFixed + '€');
+        // Calcolo biglietto per minori
+    } else if (years <= 17 && years >= 0) {
 
-    // Calcolo biglietto per over 65    
-} else if (age >= 65) {
+        let sales = price - ((price * 20) / 100);
+        let salesFixed = sales.toFixed(2);
+        console.log(salesFixed + '€');
 
-    let sales = price - ((price * 40) / 100);
-    let salesFixed = sales.toFixed(2);
-    console.log(salesFixed + '€');
+        // Calcolo biglietto per over 65    
+    } else if (years >= 65) {
 
+        let sales = price - ((price * 40) / 100);
+        let salesFixed = sales.toFixed(2);
+        console.log(salesFixed + '€');
+
+    }
 }
