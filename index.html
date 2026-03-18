@@ -23,7 +23,15 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col" id="in">
+                    <div class="col text-center mb-4">
+                        <span class="fs-1 fw-bold"> Inserisci i tuoi dati </span>
+                    </div>
                     <form>
+                        <div class="col mb-3">
+                            <input class="form-control" type="text"
+                                placeholder="Inserisci il tuo nome e cognome" name="username"
+                                id="name" required />
+                        </div>
                         <div class="col mb-3">
                             <input class="form-control" type="text"
                                 placeholder="Inserisci la distanza di kilometri che vuoi fare" name="vojage"
@@ -39,7 +47,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
             <div class="row">
                 <header class="text-center mb-3">
@@ -51,7 +58,8 @@
                         <span class="fs-4 fw-bolder"> Nome Passeggero </span>
                         <span class="fs-2" id="name"> ... </span>
                     </div>
-                    <div class="col-8 d-flex justify-content-around border border-secondary text-center" id="ticket-right">
+                    <div class="col-8 d-flex justify-content-around border border-secondary text-center"
+                        id="ticket-right">
                         <div class="mininfo">
                             <span class="p-5 fw-bold"> Offerta </span>
                             <span id="sales" class="p-2 mb-4"> ... </span>
