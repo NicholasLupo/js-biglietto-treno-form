@@ -1,13 +1,20 @@
 // Dati utente
 const km = document.getElementById('distance');
 const age = document.getElementById('user');
+const name = document.getElementById('username');
+
+//Collegamento valori ticket
+const nameTicket = document.getElementById('name');
 
 //Collegamento form
 const form = document.querySelector('form');
 form.addEventListener('submit', function (e) {
 
     e.preventDefault();
+
+    //Valori che appariranno in pagina
     getPrice(km.value, age.value)
+    nameTicket.innerText = this.name.value;
 
 })
 
@@ -16,6 +23,7 @@ function getPrice(distance, years) {
 
     //Collegamento pagina
     const result = document.getElementById('result');
+    const ticketType = document.getElementById('sales');
 
     // Calcolo prezzo base
     let price = distance * 0.21;
@@ -27,6 +35,9 @@ function getPrice(distance, years) {
         if (years >= 18 && years <= 64) {
 
             let priceFixed = price.toFixed(2);
+            let standardPrice = 'Biglietto Standard';
+
+            ticketType.innerText = standardPrice;
             result.innerText = priceFixed + '€';
 
             // Calcolo biglietto per minori
@@ -34,6 +45,9 @@ function getPrice(distance, years) {
 
             let sales = price - ((price * 20) / 100);
             let priceFixed = sales.toFixed(2);
+            let minorPrice = 'Biglietto per Minori 20%';
+
+            ticketType.innerText = minorPrice;
             result.innerText = priceFixed + '€';
 
             // Calcolo biglietto per over 65
@@ -41,6 +55,9 @@ function getPrice(distance, years) {
 
             let sales = price - ((price * 40) / 100);
             let priceFixed = sales.toFixed(2);
+            let overPrice = 'Biglietto per Anziani 40%';
+
+            ticketType.innerText = overPrice;
             result.innerText = priceFixed + '€';
 
             // Errore se l'età è un numero negativo
