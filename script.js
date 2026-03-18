@@ -14,9 +14,37 @@ form.addEventListener('submit', function (e) {
 
     //Valori che appariranno in pagina
     getPrice(km.value, age.value)
+    getCP();
+    getTrain();
     nameTicket.innerText = this.name.value;
 
 })
+
+//Generatore di codici casuali
+const getCP = () => {
+
+    const numCPPage = document.getElementById('code');
+
+    const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    let risultato = '';
+    for (let i = 0; i < 8; i++) {
+
+        let partCP = character.charAt(Math.floor(Math.random() * character.length));
+        risultato += partCP;
+
+    }
+
+    numCPPage.innerText = risultato;
+
+}
+
+const getTrain = () => {
+
+    const numTrainPage = document.getElementById('carriage');
+    let numTrain = Math.floor(Math.random() * 9999) + 1;
+    numTrainPage.innerText = numTrain;
+
+}
 
 //Calcolo biglietto
 function getPrice(distance, years) {
