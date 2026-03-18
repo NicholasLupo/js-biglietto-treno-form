@@ -12,3 +12,10 @@
     color: white;
 
 }
+
+.mininfo {
+
+    display: flex;
+    flex-direction: column;
+
+}
