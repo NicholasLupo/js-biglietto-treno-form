@@ -4,7 +4,15 @@ const age = document.getElementById('user');
 
 //Collegamento bottone
 const btn = document.getElementById('send');
-btn.addEventListener('click', getPrice(km, age))
+btn.addEventListener('click', getPrice(km.value, age.value))
+
+//Collegamento form
+const form = document.querySelector('form');
+form.addEventListener('submit', function (e){
+
+    e.preventDefault();
+
+})
 
 //Calcolo biglietto
 function getPrice(distance, years) {
