@@ -20,30 +20,41 @@ function getPrice(distance, years) {
     // Calcolo prezzo base
     let price = distance * 0.21;
 
-    // Calcolo biglietto base
-    if (years >= 18 && years <= 64) {
+    //Se la distanza inserita non sia un numero negativo
+    if (distance >= 0) {
 
-        let priceFixed = price.toFixed(2);
-        result.innerText = priceFixed + '€';
+        // Calcolo biglietto base
+        if (years >= 18 && years <= 64) {
 
-        // Calcolo biglietto per minori
-    } else if (years <= 17 && years >= 0) {
+            let priceFixed = price.toFixed(2);
+            result.innerText = priceFixed + '€';
 
-        let sales = price - ((price * 20) / 100);
-        let priceFixed = sales.toFixed(2);
-        result.innerText = priceFixed + '€';
+            // Calcolo biglietto per minori
+        } else if (years <= 17 && years >= 0) {
 
-        // Calcolo biglietto per over 65
-    } else if (years >= 65) {
+            let sales = price - ((price * 20) / 100);
+            let priceFixed = sales.toFixed(2);
+            result.innerText = priceFixed + '€';
 
-        let sales = price - ((price * 40) / 100);
-        let priceFixed = sales.toFixed(2);
-        result.innerText = priceFixed + '€';
+            // Calcolo biglietto per over 65
+        } else if (years >= 65) {
 
-        // Errore se l'età è un numero negativo
+            let sales = price - ((price * 40) / 100);
+            let priceFixed = sales.toFixed(2);
+            result.innerText = priceFixed + '€';
+
+            // Errore se l'età è un numero negativo
+        } else {
+
+            let error = "Errore nell'inserimento dell'età, ritenta";
+            result.innerText = error;
+
+        }
+
+        //Errore se i kilometri sono negativi
     } else {
 
-        let error = "Errore nell'inserimento dell'età, ritenta";
+        let error = "Errore nell'inserimento dei kilometri, ritenta";
         result.innerText = error;
 
     }
