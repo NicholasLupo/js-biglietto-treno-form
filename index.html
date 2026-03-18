@@ -8,19 +8,32 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <form>
-        <input class="form-control" type="text" placeholder="Inserisci la distanza di kilometri che vuoi fare" name="vojage" id="distance" required />
-        <input class="form-control" type="text" placeholder="Inserisci la tua età" name="age" id="user" required />
-        <button value="Calcola" id="send"> Calcola </button>
-    </form>
-    <div class="col">
-        <span id="result"> Result </span>
-    </div>
+    <header>
+        <div class="col text-center p-2" id="title">
+            <span class="fs-1"> Boolean Train </span>
+        </div>
+    </header>
+    <main>
+        <div class="col" id="in">
+            <form>
+                <input class="form-control" type="text" placeholder="Inserisci la distanza di kilometri che vuoi fare"
+                    name="vojage" id="distance" required />
+                <input class="form-control" type="text" placeholder="Inserisci la tua età" name="age" id="user"
+                    required />
+                <button value="Calcola" id="send"> Calcola </button>
+            </form>
+        </div>
+        <div class="col" id="out">
+            <span id="result"> Result </span>
+        </div>
+    </main>
+
 
     <!-- JS -->
     <script src="script.js"></script>
