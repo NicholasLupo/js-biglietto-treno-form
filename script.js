@@ -2,15 +2,12 @@
 const km = document.getElementById('distance');
 const age = document.getElementById('user');
 
-//Collegamento bottone
-const btn = document.getElementById('send');
-btn.addEventListener('click', getPrice(km.value, age.value))
-
 //Collegamento form
 const form = document.querySelector('form');
 form.addEventListener('submit', function (e){
 
     e.preventDefault();
+    getPrice(km.value, age.value)
 
 })
 
@@ -33,12 +30,17 @@ function getPrice(distance, years) {
         let salesFixed = sales.toFixed(2);
         console.log(salesFixed + '€');
 
-        // Calcolo biglietto per over 65    
+        // Calcolo biglietto per over 65
     } else if (years >= 65) {
 
         let sales = price - ((price * 40) / 100);
         let salesFixed = sales.toFixed(2);
         console.log(salesFixed + '€');
+
+        // Errore se l'età è un numero negativo
+    } else {
+
+        console.log("Errore nell'inserimento dell'età, ritenta");
 
     }
 }
